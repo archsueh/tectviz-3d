@@ -1,9 +1,9 @@
 ---
 name: archviz-3d
 description: |
-  当用户需要建筑结构、楼层功能、机械爆炸图、空间剖面或交互式 3D 教学可视化（明确提到 3D/building/floorplan/structure/exploded/spatial/walkthrough/mechanical）时加载。
+  构建视觉（tect=建造者，viz=视觉）的 3D 网页技能，不是建筑效果图渲染：用户需要建筑结构、楼层功能、机械爆炸图、空间剖面或交互式 3D 教学可视化（明确提到 3D/building/floorplan/structure/exploded/spatial/walkthrough/mechanical）时加载。
   2 类型：building（多层建筑结构，可选爆炸视图 / 线框）、floorplan（房间布局 + 导航）。自包含 HTML（Three.js + animejs v4 CDN），零构建。
-  2D 流程图/信息可视化 → archviz-diagram。
+  照片级建筑效果图 → blender-archviz；2D 流程图/信息可视化 → archviz-diagram。
   手绘/草图配图 → archviz-sketch。
   超出自包含复杂度时引导切 Vite + R3F。
 license: MIT
