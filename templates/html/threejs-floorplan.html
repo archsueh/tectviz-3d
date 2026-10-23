@@ -1,6 +1,6 @@
 <!--
-  archviz-skills upgrade Phase 3 | 2026-06-13
-  Three.js Floor Plan Visualization (archviz-skills)
+  tectviz-skills upgrade Phase 3 | 2026-06-13
+  Three.js Floor Plan Visualization (tectviz-skills)
   Use for: floor plan extrusion, multi-floor navigation, room layout
   Stack: Three.js (CDN) + animejs (CDN) + OrbitControls
   Dials: Complexity 5, Density 4, Restraint 7
@@ -12,7 +12,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Floor Plan — archviz-skills</title>
+    <title>Floor Plan — tectviz-skills</title>
     <style>
       * {
         margin: 0;
@@ -375,7 +375,7 @@
     </style>
 
     <script>
-      /* archviz-skills Theme System
+      /* tectviz-skills Theme System
        * API:
        *   applyPalette(name)  — set palette by name
        *   toggleTheme()        — toggle light↔dark
@@ -527,7 +527,7 @@
     </div>
     <div id="floor-label">1F</div>
     <div id="info">
-      楼层平面图 · archviz-skills<br />
+      楼层平面图 · tectviz-skills<br />
       点击楼层按钮切换 · 鼠标拖拽旋转
     </div>
     <canvas id="canvas" data-orbit></canvas>
@@ -543,7 +543,7 @@
       }
     </script>
 
-    <!-- archviz-skills Phase 3 | 2026-06-13 -->
+    <!-- tectviz-skills Phase 3 | 2026-06-13 -->
     <!-- ArchVizBuild Contract + Engineering Hygiene Module -->
     <!-- Include BEFORE the main 3D scene script in any Three.js template -->
     <!-- Provides: ArchVizBuild contract, dispose guard, frustum culling, explode lerp, thumbnail -->
@@ -762,7 +762,7 @@
         });
         if (lightCount >= ARCHVIZ_HYGIENE.MAX_LIGHTS) {
           console.warn(
-            `archviz-3d: light cap (${ARCHVIZ_HYGIENE.MAX_LIGHTS}) reached, skipping additional light`,
+            `tectviz-3d: light cap (${ARCHVIZ_HYGIENE.MAX_LIGHTS}) reached, skipping additional light`,
           );
           return;
         }
@@ -1211,7 +1211,7 @@
       renderLoop();
     </script>
 
-    <!-- archviz-skills Export Utility Module -->
+    <!-- tectviz-skills Export Utility Module -->
     <style id="archviz-export-styles">
       #archviz-export-btn {
         position: fixed;
@@ -1338,7 +1338,7 @@
     </style>
 
     <script>
-      /* archviz-skills Export System
+      /* tectviz-skills Export System
        * Keyboard: T = cycle theme, E = toggle export menu
        * API:
        *   exportPNG(selector, scale)   — 4× raster PNG download

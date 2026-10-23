@@ -1,25 +1,25 @@
 ---
-name: archviz-3d
+name: tectviz-3d
 description: |
   构建视觉（tect=建造者，viz=视觉）的 3D 网页技能，不是建筑效果图渲染：用户需要建筑结构、楼层功能、机械爆炸图、空间剖面或交互式 3D 教学可视化（明确提到 3D/building/floorplan/structure/exploded/spatial/walkthrough/mechanical）时加载。
   2 类型：building（多层建筑结构，可选爆炸视图 / 线框）、floorplan（房间布局 + 导航）。自包含 HTML（Three.js + animejs v4 CDN），零构建。
-  照片级建筑效果图 → blender-archviz；2D 流程图/信息可视化 → archviz-diagram。
-  手绘/草图配图 → archviz-sketch。
+  照片级建筑效果图 → blender-archviz；2D 流程图/信息可视化 → tectviz-diagram。
+  手绘/草图配图 → tectviz-sketch。
   超出自包含复杂度时引导切 Vite + R3F。
 license: MIT
 metadata:
   version: 0.7.2
-  source: https://github.com/archsueh/archviz-3d
+  source: https://github.com/archsueh/tectviz-3d
   risk: safe
   author: archsueh
   triggers: 3d, three.js, building, floorplan, structure, walkthrough, exploded, 建筑3D, 结构可视化, 爆炸图, 空间漫游, 楼层导航, mechanical, kinematics, spatial
 ---
 
-# archviz-3d
+# tectviz-3d
 
 > 3D spatial visualization — self-contained HTML, zero build step, CDN importmap.
 
-> **视觉规范**：3D 输出的结构线 / 楼板 / 强调色等 token 定义在 **archviz-skills 共享设计系统**（`archviz-diagram` 的 `DESIGN.md`，见其 §Extended: 3D Architectural Visualization）。深色工程语境可对齐第四套视觉语言 **Technical Blueprint**（navy `#0d1b2a` + cyan `#5fd0e8`）。
+> **视觉规范**：3D 输出的结构线 / 楼板 / 强调色等 token 定义在 **tectviz-skills 共享设计系统**（`tectviz-diagram` 的 `DESIGN.md`，见其 §Extended: 3D Architectural Visualization）。深色工程语境可对齐第四套视觉语言 **Technical Blueprint**（navy `#0d1b2a` + cyan `#5fd0e8`）。
 
 ## When to Use
 
@@ -40,19 +40,19 @@ metadata:
 
 ## When NOT to Use
 
-- 2D flowcharts, architecture diagrams, data charts → **archviz-diagram** (2D)
-- Article illustrations, concept sketches → **archviz-sketch**
+- 2D flowcharts, architecture diagrams, data charts → **tectviz-diagram** (2D)
+- Article illustrations, concept sketches → **tectviz-sketch**
 - Full React/WebGL app with build step → use Vite + R3F directly
 
 ## Skill Boundaries
 
 | Need | Use | Output mode |
 |---|---|---|
-| 2D diagram/chart/card | archviz-diagram (2D infoviz) | — |
+| 2D diagram/chart/card | tectviz-diagram (2D infoviz) | — |
 | 3D structural / exploded / walkthrough | **this skill — Tier A** | self-contained HTML |
 | Complex parametric geometry (walls/stairs) | **this skill — Tier B** | project-directory |
 | Realistic models (furniture/vegetation) | **this skill — Tier C** | project-directory |
-| Sketch/illustration | archviz-sketch | — |
+| Sketch/illustration | tectviz-sketch | — |
 | Full interactive 3D app with build step | Vite + R3F | — |
 
 **Output mode decision:**
@@ -365,12 +365,12 @@ const ARCHVIZ_HYGIENE = {
 ## Architecture
 
 ```
-archviz-3d/
+tectviz-3d/
 ├── SKILL.md              # This file — routing + gotchas
 ├── README.md             # GitHub overview
 ├── templates/html/
-│   ├── _archviz-theme.html       # Shared theme system (from archviz-diagram)
-│   ├── _archviz-export.html      # Shared export system (from archviz-diagram)
+│   ├── _archviz-theme.html       # Shared theme system (from tectviz-diagram)
+│   ├── _archviz-export.html      # Shared export system (from tectviz-diagram)
 │   ├── _archviz-deps.html        # CDN importmap reference
 │   ├── _archviz-3d-contract.html # ArchVizBuild contract
 │   ├── _archviz-svg-overlay.html # SVG annotation layer (AnnotationLayer class)
@@ -441,7 +441,7 @@ _updateExplode(t) {
 
 ## Theme & Export
 
-Shared with archviz-diagram (2D): `_archviz-theme.html` + `_archviz-export.html`.
+Shared with tectviz-diagram (2D): `_archviz-theme.html` + `_archviz-export.html`.
 - T = cycle theme, E = export menu
 - 3D canvas has `data-orbit` to prevent keyboard conflicts
 
@@ -458,15 +458,15 @@ Two hard requirements, both of which were silently violated until v0.6.1:
    transparent — a valid-looking PNG with zero opaque pixels. The canvas
    `renderAtScale(ctx, scale)` hook that would avoid this is declared by the
    export module but implemented by no template in this repo or in
-   archviz-diagram, so the upscale fallback is always what runs.
+   tectviz-diagram, so the upscale fallback is always what runs.
 2. **Never hand-minify an inline copy of the export module.** That is how
    `threejs-floorplan.html` lost a `}` and stopped parsing entirely — the
    Export button simply never appeared, with one `SyntaxError` as the only
    clue.
 
-✅ **Partials re-synced to archviz-diagram (2026-09-30, v0.6.2).**
+✅ **Partials re-synced to tectviz-diagram (2026-09-30, v0.6.2).**
 `_archviz-theme.html` and `_archviz-export.html` are now byte-identical to
-archviz-diagram's modules, and this repo carries the same two maintenance
+tectviz-diagram's modules, and this repo carries the same two maintenance
 scripts — **run both after editing either partial**:
 
 ```sh
@@ -493,7 +493,7 @@ before committing, and check `git diff` afterwards.
 
 **Don't hardcode the palette count anywhere.** Point at `ARCHVIZ_PALETTES`.
 
-## Dials (inherited from archviz-diagram)
+## Dials (inherited from tectviz-diagram)
 
 | Dial | Default | Note |
 |---|---|---|
@@ -504,13 +504,13 @@ before committing, and check `git diff` afterwards.
 ## MCP Server Setup
 
 ```bash
-cd ~/Developer/archviz-3d
+cd ~/Developer/tectviz-3d
 /opt/homebrew/bin/python3.12 -m venv .venv
 source .venv/bin/activate
 pip install -e ".[mcp]"
 
-hermes mcp add archviz-3d \
-  --command "/Users/mac/Developer/archviz-3d/.venv/bin/python" \
+hermes mcp add tectviz-3d \
+  --command "/Users/mac/Developer/tectviz-3d/.venv/bin/python" \
   --args "-m" "archviz3d.mcp_server"
 ```
 

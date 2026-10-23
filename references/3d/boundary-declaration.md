@@ -1,4 +1,4 @@
-# archviz-3d 边界声明
+# tectviz-3d 边界声明
 
 > **本文件与 SKILL.md 有重叠，以 SKILL.md 为准。** 下面 `## ArchVizBuild Contract`、
 > `### 工程卫生常量`、`## CDN 路径` 三节是 SKILL.md 同名小节（`## ArchVizBuild Contract`、
@@ -12,7 +12,7 @@
 
 ## 自包含HTML vs 完整App的边界
 
-archviz-3d 的核心交付形态是**自包含HTML**（CDN importmap，零构建步骤）。当场景复杂度超过以下阈值时，应指引用户切到 Vite + R3F 完整应用。
+tectviz-3d 的核心交付形态是**自包含HTML**（CDN importmap，零构建步骤）。当场景复杂度超过以下阈值时，应指引用户切到 Vite + R3F 完整应用。
 
 ### 适用自包含HTML的场景
 

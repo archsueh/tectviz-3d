@@ -20,7 +20,7 @@ paste-in fragment means editing one set.
 # reason-bearing exemption table, which is deliberately per-script because the
 # reasons differ).
 #
-# The first three are archviz-3d's own paste-in fragments — snippets, not full
+# The first three are tectviz-3d's own paste-in fragments — snippets, not full
 # pages, so they must not carry the shared theme block or export module.
 EXCLUDED = {
     "_archviz-3d-contract.html",

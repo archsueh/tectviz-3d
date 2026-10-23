@@ -1,7 +1,7 @@
 # mechlab — 3D Mechanical Systems Explorer 参考分析
 
 来源: https://github.com/thebuggeddev/mechlab
-用途: archviz-3d 升级参考
+用途: tectviz-3d 升级参考
 
 ## 核心架构
 
@@ -14,13 +14,13 @@ interface MachineBuild {
   dispose(): void             // GPU资源清理
 }
 ```
-archviz-3d 的 ArchVizBuild 已有类似设计，可升级为更完整的 contract。
+tectviz-3d 的 ArchVizBuild 已有类似设计，可升级为更完整的 contract。
 
 ### 注册表模式
 所有机器在 `modules/machines/registry.ts` 注册（名称、统计、动画触发器、相机位置）。
 侧边栏、查看器、控件都从注册表读取，添加新机器不需要修改核心代码。
 
-→ archviz-3d 应采用同样模式：`archviz3d/engine.py` 中 TYPE_REGISTRY 已是雏形，扩展为完整注册表。
+→ tectviz-3d 应采用同样模式：`archviz3d/engine.py` 中 TYPE_REGISTRY 已是雏形，扩展为完整注册表。
 
 ### 物理正确动画（非关键帧）
 - 活塞: slider-crank 公式（曲柄角度→活塞位置）
@@ -30,7 +30,7 @@ archviz-3d 的 ArchVizBuild 已有类似设计，可升级为更完整的 contra
 - 差速器: 环齿轮比 + 转弯时±35%轴速差
 - 行星齿轮: 精确周转轮比
 
-→ archviz-3d Phase 3 目标。
+→ tectviz-3d Phase 3 目标。
 
 ### 性能优化
 - 单 WebGLRenderer（dpr cap 2, ACES tone mapping）
@@ -47,7 +47,7 @@ archviz-3d 的 ArchVizBuild 已有类似设计，可升级为更完整的 contra
 - prefers-reduced-motion 支持
 - 高对比度单色模式
 
-## archviz-3d 升级路线
+## tectviz-3d 升级路线
 
 1. 升级 ArchVizBuild → MachineBuild 风格 contract（parts + update + dispose）
 2. 添加注册表模式（TYPE_REGISTRY 扩展为完整注册表）

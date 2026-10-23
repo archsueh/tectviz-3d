@@ -1,4 +1,4 @@
-# 3D Models & Assets Sources (Curated for archviz-3d)
+# 3D Models & Assets Sources (Curated for tectviz-3d)
 
 ## Primary Free CC0 / Downloadable 3D (from 400-free-design-resources 3D Assets)
 - Poly Pizza (https://poly.pizza) — Thousands of free low-poly 3D models. Ideal for quick viz.

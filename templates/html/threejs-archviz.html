@@ -1,6 +1,6 @@
 <!--
-  archviz-skills upgrade Phase 1 | 2026-06-13
-  Three.js Building Structure Visualization (archviz-skills)
+  tectviz-skills upgrade Phase 1 | 2026-06-13
+  Three.js Building Structure Visualization (tectviz-skills)
   Use for: building envelope, column grid, floor slabs, structural shell, section cut
   Stack: Three.js (CDN) + animejs (CDN) + OrbitControls
   Dials: Complexity 5, Density 4, Restraint 7
@@ -12,7 +12,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Building Structure — archviz-skills</title>
+    <title>Building Structure — tectviz-skills</title>
     <style>
       * {
         margin: 0;
@@ -365,7 +365,7 @@
     </style>
 
     <script>
-      /* archviz-skills Theme System
+      /* tectviz-skills Theme System
        * API:
        *   applyPalette(name)  — set palette by name
        *   toggleTheme()        — toggle light↔dark
@@ -515,7 +515,7 @@
       </button>
     </div>
     <div id="info">
-      建筑结构可视化 · archviz-skills<br />
+      建筑结构可视化 · tectviz-skills<br />
       鼠标拖拽旋转 · 滚轮缩放 · 右键平移
     </div>
     <canvas id="canvas" data-orbit></canvas>
@@ -745,7 +745,7 @@
         });
         if (lightCount >= ARCHVIZ_HYGIENE.MAX_LIGHTS) {
           console.warn(
-            `archviz-3d: light cap (${ARCHVIZ_HYGIENE.MAX_LIGHTS}) reached, skipping additional light`,
+            `tectviz-3d: light cap (${ARCHVIZ_HYGIENE.MAX_LIGHTS}) reached, skipping additional light`,
           );
           return;
         }
@@ -782,7 +782,7 @@
       let isExploded = false;
       let isWireframe = false;
 
-      // === Tokens (archviz-skills DESIGN.md) ===
+      // === Tokens (tectviz-skills DESIGN.md) ===
       const TOKENS = {
         structure: 0xa8a29e, // wireframe, grid
         floor: 0xe8e4e0, // slab fill
@@ -826,7 +826,7 @@
         if (obj.isLight) {
           _lightCount++;
           if (_lightCount > 3) {
-            console.warn("archviz-3d: light cap (3) reached, skipping");
+            console.warn("tectviz-3d: light cap (3) reached, skipping");
             return;
           }
         }
@@ -1207,7 +1207,7 @@
       renderLoop();
     </script>
 
-    <!-- archviz-skills Export Utility Module -->
+    <!-- tectviz-skills Export Utility Module -->
     <style id="archviz-export-styles">
       #archviz-export-btn {
         position: fixed;
@@ -1334,7 +1334,7 @@
     </style>
 
     <script>
-      /* archviz-skills Export System
+      /* tectviz-skills Export System
        * Keyboard: T = cycle theme, E = toggle export menu
        * API:
        *   exportPNG(selector, scale)   — 4× raster PNG download

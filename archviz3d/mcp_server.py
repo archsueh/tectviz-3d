@@ -1,9 +1,9 @@
-"""archviz-3d MCP server."""
+"""tectviz-3d MCP server."""
 
 from mcp.server.fastmcp import FastMCP
 from .engine import render, list_types
 
-mcp = FastMCP("archviz-3d")
+mcp = FastMCP("tectviz-3d")
 
 
 @mcp.tool()

@@ -1,4 +1,4 @@
-# archviz-3d
+# tectviz-3d
 
 3D spatial visualization skill for AI agents. Self-contained HTML with Three.js + animejs v4.
 
@@ -37,7 +37,7 @@ Open any `.html` file in a browser. No build step needed.
 ## Related Skills
 
 - [archviz](https://github.com/archsueh/archviz) — 2D infoviz (flowcharts, diagrams, data charts)
-- archviz-sketch — Article illustrations, concept sketches (coming soon)
+- tectviz-sketch — Article illustrations, concept sketches (coming soon)
 
 ## License
 

@@ -1,4 +1,4 @@
-"""archviz-3d CLI."""
+"""tectviz-3d CLI."""
 
 import argparse
 import json

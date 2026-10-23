@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "archviz-3d"
+name = "tectviz-3d"
 version = "0.7.2"
 description = "Three.js self-contained 3D visualization engine for AI agents"
 readme = "README.md"

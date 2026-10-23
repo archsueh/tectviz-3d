@@ -25,14 +25,14 @@ from sync_common import EXCLUDED
 # the span from the anchor through the final </body> is replaced.
 ANCHOR_PATTERNS = (
     r"<!-- === Export System Script === -->.*?</body>",
-    r"<!-- archviz-skills Export Utility Script -->.*?</body>",
+    r"<!-- tectviz-skills Export Utility Script -->.*?</body>",
     r"<!-- Export Utility Module — paste BEFORE </body> of any archviz HTML template -->.*?</body>",
-    r"<!-- archviz-skills Export Utility Module -->.*?</body>",
+    r"<!-- tectviz-skills Export Utility Module -->.*?</body>",
     r'<style id="archviz-export-styles">.*?</body>',
-    r"<script>\s*/\* archviz-skills Export System.*?</body>",
+    r"<script>\s*/\* tectviz-skills Export System.*?</body>",
 )
 
-ANCHOR_COMMENT = "<!-- archviz-skills Export Utility Module -->"
+ANCHOR_COMMENT = "<!-- tectviz-skills Export Utility Module -->"
 
 
 def load_export_block(templates_dir):
